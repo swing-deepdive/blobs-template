@@ -10,8 +10,8 @@ public class View extends JFrame implements IView {
 		JLabel jlbHelloWorld = new JLabel("Score: 1240");
 		jlbHelloWorld.setVerticalAlignment(SwingConstants.TOP);
 		jlbHelloWorld.setHorizontalAlignment(SwingConstants.CENTER);
-		add(jlbHelloWorld);
+		this.add(jlbHelloWorld);
 		this.setSize(900, 700);
-		setVisible(true);
+		this.setVisible(true);
 	}
 }

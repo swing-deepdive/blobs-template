@@ -1,5 +1,9 @@
 package com.blobs.model;
 
-public abstract class Blob {
+import com.blobs.view.JBlob;
 
+public abstract class Blob {
+	
+	abstract JBlob getJBlob();
+	
 }
