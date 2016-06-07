@@ -8,7 +8,7 @@ import javax.swing.Timer;
 public class AnimationManager {
     private static AnimationManager animationManager = null;
 
-    private ActionUpdateAnimationListener animationListener;
+    private UpdateAnimationListener animationListener;
     private int updateFrequency;
 
     public static AnimationManager getInstance(int updateFrequency) {
@@ -26,7 +26,7 @@ public class AnimationManager {
 
     private AnimationManager(int updateFrequency) {
         this.updateFrequency = updateFrequency;
-        animationListener = new ActionUpdateAnimationListener();
+        animationListener = new UpdateAnimationListener();
         Timer animationTimer = new Timer(updateFrequency, animationListener);
 
         animationTimer.start();

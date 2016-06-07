@@ -27,13 +27,8 @@ public class MoveAnimation extends Animation {
 
         int currentX = (int) getJBlob().getLocation().getX();
         int currentY = (int)  getJBlob().getLocation().getY();
-        int width = getJBlob().getShapeWidth();
-        int height = getJBlob().getShapeHeight();
 
         getJBlob().setLocation(currentX + xStep, currentY + yStep);
-
-//        getJBlob().getGraphics().clearRect(currentX, currentY, width + 10, height + 10);
-//        getJBlob().getGraphics().drawOval(currentX + xStep, currentX + yStep, width, height);
 
         currentStep++;
     }

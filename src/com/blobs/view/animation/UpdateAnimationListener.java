@@ -9,10 +9,10 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Created by root on 08.06.16.
  */
-class ActionUpdateAnimationListener implements ActionListener {
+class UpdateAnimationListener implements ActionListener {
     private Set<Animation> animations;
 
-    ActionUpdateAnimationListener() {
+    UpdateAnimationListener() {
         this.animations = Collections.newSetFromMap(new ConcurrentHashMap<Animation, Boolean>());
     }
 
