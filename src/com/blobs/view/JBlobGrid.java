@@ -16,21 +16,12 @@ public class JBlobGrid extends GridLayout {
         final JPanel jblobGridPanel = new JPanel();
         jblobGridPanel.setLayout(this);
 
-        ImageIcon image = new ImageIcon("image/pic1.jpg");
-        JLabel label = new JLabel("", image, JLabel.CENTER);
-
-        //Add buttons to experiment with Grid Layout
-        jblobGridPanel.add(label, BorderLayout.CENTER);
-        jblobGridPanel.add(label, BorderLayout.CENTER);
-        jblobGridPanel.add(label, BorderLayout.CENTER);
-
-        jblobGridPanel.add(label, BorderLayout.CENTER);
-        jblobGridPanel.add(label, BorderLayout.CENTER);
-        jblobGridPanel.add(label, BorderLayout.CENTER);
-
-        jblobGridPanel.add(label, BorderLayout.CENTER);
-        jblobGridPanel.add(label, BorderLayout.CENTER);
-        jblobGridPanel.add(label, BorderLayout.CENTER);
+        for (int i = 0; i < 9; i++) {
+            ImageIcon image = new ImageIcon("./sf.png");
+            JLabel label = new JLabel("", image, JLabel.CENTER);
+            label.setSize(50, 50);
+            jblobGridPanel.add(label, BorderLayout.CENTER);
+        }
 
         pane.add(jblobGridPanel, BorderLayout.NORTH);
     }
