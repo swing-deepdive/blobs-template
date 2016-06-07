@@ -1,12 +1,5 @@
 package com.blobs.view.animation;
 
-import com.blobs.view.JBlob;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 import javax.swing.Timer;
 
 /**
@@ -15,7 +8,7 @@ import javax.swing.Timer;
 public class AnimationManager {
     private static AnimationManager animationManager = null;
 
-    private Set<Animation> animations;
+    private ActionUpdateAnimationListener animationListener;
     private int updateFrequency;
 
     public static AnimationManager getInstance(int updateFrequency) {
@@ -32,9 +25,10 @@ public class AnimationManager {
     }
 
     private AnimationManager(int updateFrequency) {
-        animations = ConcurrentHashMap.newKeySet();
         this.updateFrequency = updateFrequency;
-        Timer animationTimer = new Timer(updateFrequency, (actionEvent) -> animate());
+        animationListener = new ActionUpdateAnimationListener();
+        Timer animationTimer = new Timer(updateFrequency, animationListener);
+
         animationTimer.start();
     }
 
@@ -43,14 +37,10 @@ public class AnimationManager {
     }
 
     public void addAnimation(Animation animation) {
-        animations.add(animation);
+        animationListener.addAnimation(animation);
     }
 
     public void removeAnimation(Animation animation) {
-        animations.remove(animation);
-    }
-
-    public void animate() {
-        animations.stream().forEach(Animation::animateNext);
+        animationListener.removeAnimation(animation);
     }
  }
