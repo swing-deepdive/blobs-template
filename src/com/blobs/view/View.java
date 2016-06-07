@@ -1,17 +1,26 @@
 package com.blobs.view;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+import com.blobs.view.animation.Animation;
+import com.blobs.view.animation.AnimationManager;
+import com.blobs.view.animation.MoveAnimation;
+
+import javax.swing.*;
 
 public class View extends JFrame implements IView {
-	
+
 	public View() {
-		JLabel jlbHelloWorld = new JLabel("Score: 1240");
-		jlbHelloWorld.setVerticalAlignment(SwingConstants.TOP);
-		jlbHelloWorld.setHorizontalAlignment(SwingConstants.CENTER);
-		this.add(jlbHelloWorld);
 		this.setSize(900, 700);
-		this.setVisible(true);
+		this.setResizable(false);
+
+        // Create and set up grid
+        JBlobGrid jBlobGrid = new JBlobGrid(3, 3);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        // Initialize the grid with images etc.
+        jBlobGrid.init(this.getContentPane());
+
+        // Display the window
+        this.pack();
+        this.setVisible(true);
 	}
 }
