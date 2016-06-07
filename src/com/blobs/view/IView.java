@@ -1,4 +1,4 @@
-package com.blobs;
+package com.blobs.view;
 
 public interface IView {
 

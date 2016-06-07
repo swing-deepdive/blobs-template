@@ -1,4 +1,4 @@
-package com.blobs;
+package com.blobs.controller;
 
 public interface IController {
 
