@@ -5,8 +5,8 @@ import com.blobs.view.JStandardBlob;
 
 public class StandardBlob extends Blob {
 
-	public StandardBlob(int id, int x, int y) {
-		super(id, x, y);
+	public StandardBlob(int id, int lifetime) {
+		super(id, lifetime);
 		// TODO Auto-generated constructor stub
 	}
 
