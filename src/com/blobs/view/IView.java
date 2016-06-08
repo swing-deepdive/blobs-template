@@ -22,5 +22,7 @@ public interface IView {
 
     void highscoreSubmitted(int score, String name);
 
+    void run();
+
     void showLeaderboards(Map<String, Integer> leaderboardMap);
 }

@@ -54,12 +54,17 @@ public class View extends JFrame implements IView {
 
     @Override
     public void gameStarted(Blob[] blobs) {
-        jBlobGrid.init(this.getContentPane(), blobs);
+        this.jBlobGrid.init(this.getContentPane(), blobs);
     }
 
     @Override
     public void highscoreSubmitted(int score, String name) {
 
+    }
+
+    @Override
+    public void run() {
+        this.controller.startGame();
     }
 
     @Override
