@@ -26,6 +26,7 @@ public class JGameOverPanel extends JComponent implements KeyListener {
 		textField.setBorder(null);
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setFont(new Font("PixelSplitter-Bold", Font.BOLD, 57));
+        textField.addKeyListener(this);
 		this.add(textField);
 		this.revalidate();
 		this.repaint();

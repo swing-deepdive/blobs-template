@@ -43,14 +43,8 @@ public class JHighScorePanel extends JPanel {
     }
 
     public void initTable(Set<Ranking> highscoreData) {
-         //String[][] arrayData = handleData(highscoreData);
-        String arrayData[][] =
-                {
-                        { "12", "Julian"},
-                        { "-123", "43"},
-                        { "93", "89.2"},
-                        { "279", "9033"}
-                };
+         String[][] arrayData = handleData(highscoreData);
+
         // Create columns names
         String columnNames[] = { "HighScore", "Name"};
 

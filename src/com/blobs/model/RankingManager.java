@@ -19,7 +19,7 @@ public class RankingManager {
 	
 	public Set<Ranking> getRankings() {
 		Set<Ranking> rankings = new HashSet<Ranking>();
-		String json = this.connector.getScores();
+        String json = this.connector.getScores();
 		while(json.contains("\"Name\":")) {
 			
 			json = json.substring(json.indexOf("\"Name\":\"") + 8);
