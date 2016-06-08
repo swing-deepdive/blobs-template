@@ -35,7 +35,6 @@ public class JBlobGrid extends GridLayout {
 
     public void updateSlot(int index) {
         JBlob blob = jBlobList.get(index);
-        int random = (int) (Math.random() * 8.0) + 1;
-        blob.update(random);
+        blob.update();
     }
 }
