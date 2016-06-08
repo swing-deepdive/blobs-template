@@ -30,11 +30,4 @@ public class RankingManager {
 		}
 		return rankings;
 	}
-	
-
-
-	public static void main(String[] args) {
-		new RankingManager().getRankings();
-	}
-	
 }
