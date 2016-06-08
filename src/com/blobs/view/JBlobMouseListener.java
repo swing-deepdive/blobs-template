@@ -1,7 +1,5 @@
 package com.blobs.view;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
