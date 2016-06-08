@@ -2,9 +2,9 @@ package com.blobs.view;
 
 public interface IView {
 
-    void showBlob(int index);
+    void showSlot(int index);
 
-    void hideBlob(int index);
+    void hideSlot(int index);
 
     void updateScore(int score);
 
