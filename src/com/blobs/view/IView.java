@@ -10,17 +10,17 @@ public interface IView {
 
     void setController(IController controller);
 
-    void showSlot(Blob blob);
+    void showBlob(Blob blob);
 
-    void hideSlot(Blob blob);
+    void hideBlob(Blob blob);
 
     void updateScore(int score);
 
     void gameOver();
 
-    void gameStarted(Blob[] blobs);
+    void gameStarted();
 
-    void run();
+    void startProgram();
 
     void showLeaderboards(List<Ranking> leaderboard);
 }

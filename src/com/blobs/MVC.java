@@ -20,7 +20,7 @@ public class MVC {
         model = new Game(view);
         controller = new Controller(model);
         view.setController(controller);
-        view.run();
+        view.startProgram();
     }
 
     public static IModel getModel() {

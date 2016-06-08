@@ -2,7 +2,6 @@ package com.blobs.model;
 import java.util.Timer;
 
 import com.blobs.view.IView;
-import com.blobs.view.View;
 
 public class Game implements IModel{
 	
@@ -29,7 +28,7 @@ public class Game implements IModel{
 	public void killBlob(Blob blob) {
 		this.score += blob.getScore();
 		this.field.removeBlob(blob.getId());
-		this.view.hideSlot(blob);
+		this.view.hideBlob(blob);
 		this.view.updateScore(this.score);
 	}
 	
@@ -42,7 +41,7 @@ public class Game implements IModel{
 	
 	public void addBlob() {
 		Blob blob = this.field.addBlob();
-		this.view.showSlot(blob);
+		this.view.showBlob(blob);
 	}
 
 	@Override

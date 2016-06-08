@@ -15,10 +15,8 @@ import java.util.*;
 import java.util.List;
 
 public class View extends JFrame implements IView {
-	private JGamePanel gamePanel;
 	private JStartPanel startPanel;
 	private IController controller;
-	private JGameOverPanel gameOverPanel;
     private JHighScorePanel highScorePanel;
 
 	public View() {
@@ -43,58 +41,36 @@ public class View extends JFrame implements IView {
 	}
 
 	@Override
-	public void showSlot(Blob blob) {
-		this.gamePanel.getGrid().showSlot(blob);
+	public void showBlob(Blob blob) {
 	}
 
 	@Override
-	public void hideSlot(Blob blob) {
-		this.gamePanel.getGrid().hideSlot(blob);
-	}
+	public void hideBlob(Blob blob) {
+    }
 
 	@Override
 	public void updateScore(int score) {
-		this.gamePanel.updateScore(score);
 	}
 
 	@Override
 	public void gameOver() {
-		gameOverPanel = new JGameOverPanel();
-		this.remove(this.gamePanel);
-		gameOverPanel.setBounds(0, 0, 900, 700);
-		this.gamePanel = null;
-		this.add(gameOverPanel);
-        this.revalidate();
-        this.repaint();
     }
 
 	@Override
-	public void gameStarted(Blob[] blobs) {
-		this.gamePanel = new JGamePanel();
-		remove(this.startPanel);
-		add(this.gamePanel);
-		this.gamePanel.initUI(blobs);
-        this.revalidate();
-        this.repaint();
+	public void gameStarted() {
 	}
 
 	@Override
-	public void run() {
-		startPanel.startAnimation();
-		AudioPlayer audioPlayer = new AudioPlayer();
-		audioPlayer.playSound("audio" + File.separator + "theme.mp3", MediaPlayer.INDEFINITE);
+	public void startProgram() {
 	}
 
 	@Override
 	public void showLeaderboards(List<Ranking> leaderboard) {
         highScorePanel = new JHighScorePanel();
         highScorePanel.initTable(leaderboard);
-        this.remove(this.gameOverPanel);
         highScorePanel.setBounds(0, 0, 900, 700);
-        this.gameOverPanel = null;
         this.add(highScorePanel);
         this.revalidate();
         this.repaint();
-		
 	}
 }
