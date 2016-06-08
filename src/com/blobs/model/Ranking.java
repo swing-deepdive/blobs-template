@@ -3,7 +3,7 @@ package com.blobs.model;
 /**
  * Created by root on 08.06.16.
  */
-public class Ranking implements Comparable<Integer> {
+public class Ranking implements Comparable<Ranking> {
     private String name;
     private int highscore;
 
@@ -20,8 +20,9 @@ public class Ranking implements Comparable<Integer> {
         return highscore;
     }
 
-    @Override
-    public int compareTo(Integer o) {
-        return this.highscore - o;
-    }
+	@Override
+	public int compareTo(Ranking o) {
+		// TODO Auto-generated method stub
+		return o.getHighscore() - getHighscore();
+	}
 }

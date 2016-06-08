@@ -1,19 +1,18 @@
 package com.blobs.view;
 
-import com.blobs.model.Ranking;
-
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
 
-import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+
+import com.blobs.model.Ranking;
 
 /**
  * Created by root on 08.06.16.
@@ -28,7 +27,7 @@ public class JHighScorePanel extends JPanel {
         this.setLayout(null);
     }
 
-    private String[][] handleData(Set<Ranking> highscoreData) {
+    private String[][] handleData(List<Ranking> highscoreData) {
        String[][] arrayData = new String[highscoreData.size()][2];
 
         int i = 0;
@@ -42,7 +41,7 @@ public class JHighScorePanel extends JPanel {
         return arrayData;
     }
 
-    public void initTable(Set<Ranking> highscoreData) {
+    public void initTable(List<Ranking> highscoreData) {
          String[][] arrayData = handleData(highscoreData);
 
         // Create columns names
