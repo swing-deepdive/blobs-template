@@ -59,6 +59,7 @@ public class JStartPanel extends JComponent implements MouseListener{
 
 	private void initSwingLater() {
 		final JFXPanel jFXPanel = new JFXPanel();
+        Platform.setImplicitExit(false);
 		jFXPanel.setBounds(0, 0, 900, 700);
 		jFXPanel.setAlignmentY(0);
 

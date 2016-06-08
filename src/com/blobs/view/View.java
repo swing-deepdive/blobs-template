@@ -3,6 +3,7 @@ package com.blobs.view;
 import com.blobs.controller.IController;
 import com.blobs.model.Blob;
 import com.blobs.util.AudioPlayer;
+import com.sun.java.swing.plaf.gtk.GTKConstants;
 import javafx.scene.media.MediaPlayer;
 
 import javax.swing.*;
@@ -24,11 +25,10 @@ public class View extends JFrame implements IView {
 
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        // Initialize the grid with images etc.
         getContentPane().setBackground(new Color(44, 165, 124));
         setBackground(new Color(44, 165, 124));
         add(startPanel);
-        // Display the window
+
         this.setVisible(true);
 	}
 
@@ -54,7 +54,11 @@ public class View extends JFrame implements IView {
 
     @Override
     public void gameOver() {
-
+        JGameOverPanel gameOverPanel = new JGameOverPanel();
+        this.remove(gamePanel);
+        gameOverPanel.setBounds(0, 0, 900, 700);
+        this.gamePanel.setVisible(false);
+        this.add(gameOverPanel);
     }
 
     @Override
@@ -63,7 +67,7 @@ public class View extends JFrame implements IView {
         remove(this.startPanel);
         this.startPanel = null;
         add(this.gamePanel);
-        this.gamePanel.getGrid().init(gamePanel, blobs);
+        this.gamePanel.initUI(blobs);
     }
 
     @Override
@@ -73,10 +77,9 @@ public class View extends JFrame implements IView {
 
     @Override
     public void run() {
-        //this.controller.startGame();
         startPanel.startAnimation();
         AudioPlayer audioPlayer = new AudioPlayer();
-        audioPlayer.playSound("audio" + File.separator + "theme.wav", MediaPlayer.INDEFINITE);
+        audioPlayer.playSound("audio" + File.separator + "theme.mp3", MediaPlayer.INDEFINITE);
     }
 
     @Override

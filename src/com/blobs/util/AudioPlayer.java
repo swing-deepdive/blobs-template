@@ -12,13 +12,21 @@ import java.net.MalformedURLException;
 /**
  * Created by root on 08.06.16.
  */
-public class AudioPlayer {
+public class AudioPlayer implements Runnable {
+    private String sound;
+    private int cycleCount;
 
     public void playSound(String sound, int cycleCount) {
-        MediaPlayer mediaPlayer;
+        this.sound = sound;
+        this.cycleCount = cycleCount;
 
+        new Thread(this).start();
+    }
+
+    @Override
+    public void run() {
         try {
-            mediaPlayer = new MediaPlayer(new Media(new File(sound).toURI().toURL().toString()));
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(new File(sound).toURI().toURL().toString()));
             mediaPlayer.play();
             mediaPlayer.setCycleCount(cycleCount);
         } catch (MalformedURLException e) {
