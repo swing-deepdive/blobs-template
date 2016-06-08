@@ -2,7 +2,15 @@ package com.blobs.view;
 
 public interface IView {
 
-    void add(int index);
+    void showBlob(int index);
 
-    void remove(int index);
+    void hideBlob(int index);
+
+    void updateScore(int score);
+
+    void gameOver();
+
+    void gameStarted();
+
+    void highscoreSubmitted(int score, String name);
 }

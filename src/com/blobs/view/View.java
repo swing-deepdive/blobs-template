@@ -24,12 +24,32 @@ public class View extends JFrame implements IView {
 	}
 
     @Override
-    public void add(int index) {
+    public void showBlob(int index) {
 
     }
 
     @Override
-    public void remove(int index) {
+    public void hideBlob(int index) {
+
+    }
+
+    @Override
+    public void updateScore(int score) {
+
+    }
+
+    @Override
+    public void gameOver() {
+
+    }
+
+    @Override
+    public void gameStarted() {
+
+    }
+
+    @Override
+    public void highscoreSubmitted(int score, String name) {
 
     }
 }
