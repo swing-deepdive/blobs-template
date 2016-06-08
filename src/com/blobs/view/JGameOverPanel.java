@@ -17,7 +17,7 @@ public class JGameOverPanel extends JComponent {
 	public JGameOverPanel() {
 
 		JTextField textField = new JTextField();
-		textField.setBounds(380, 340, 430, 120);
+		textField.setBounds(350, 340, 470, 120);
 		textField.setForeground(new Color(7, 112, 152));
 		textField.setBackground(new Color(0, 0, 0, 0));
 		textField.setBorder(null);
