@@ -2,13 +2,17 @@ package com.blobs.view;
 
 import com.blobs.controller.IController;
 import com.blobs.model.Blob;
+import com.blobs.util.AudioPlayer;
+import javafx.scene.media.MediaPlayer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.util.*;
 
 public class View extends JFrame implements IView {
     private JGamePanel gamePanel;
+    private JStartPanel startPanel;
     private IController controller;
 
 	public View() {
@@ -16,13 +20,15 @@ public class View extends JFrame implements IView {
 		this.setResizable(false);
 
         // Create and set up grid
-        gamePanel = new JGamePanel();
+        //gamePanel = new JGamePanel();
+        startPanel = new JStartPanel();
+
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         // Initialize the grid with images etc.
         getContentPane().setBackground(new Color(44, 165, 124));
         setBackground(new Color(44, 165, 124));
-        add(gamePanel);
+        add(startPanel);
         // Display the window
         this.setVisible(true);
 	}
@@ -64,7 +70,10 @@ public class View extends JFrame implements IView {
 
     @Override
     public void run() {
-        this.controller.startGame();
+        //this.controller.startGame();
+        startPanel.startAnimation();
+        AudioPlayer audioPlayer = new AudioPlayer();
+        audioPlayer.playSound("audio" + File.separator + "theme.wav", MediaPlayer.INDEFINITE);
     }
 
     @Override

@@ -1,55 +1,63 @@
-//package com.blobs.view;
-//
-//import java.awt.BorderLayout;
-//import java.awt.Component;
-//import java.awt.Dimension;
-//import java.io.File;
-//import java.io.IOException;
-//import java.net.MalformedURLException;
-//import java.net.URL;
-//
-//import javax.swing.JEditorPane;
-//import javax.swing.JFrame;
-//import javax.swing.JPanel;
-//import javax.swing.JScrollPane;
-//import javax.media.CannotRealizeException;
-//import javax.media.Manager;
-//import javax.media.NoPlayerException;
-//import javax.media.Player;
-//
-//public class JStartPanel extends JPanel {
-//
-//	public static void main(String[] args) {
-//		new JStartPanel();
-//	}
-//
-//	public JStartPanel() {
-//		super();
-//
-//
-//		Player mediaPlayer = null;
-//		try {
-//			mediaPlayer = Manager.createRealizedPlayer(new File("vid" + File.separator + "prequel4.mov").toURI().toURL());
-//		} catch (NoPlayerException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (CannotRealizeException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (MalformedURLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		Component video = mediaPlayer.getVisualComponent();
-//		Component controls = mediaPlayer.getControlPanelComponent();
-//		JFrame f = new JFrame("Test HTML");
-//		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		f.getContentPane().add(video);
-//		mediaPlayer.start();
-//		f.setSize(900, 700);
-//		f.setVisible(true);
-//	}
-//}
+package com.blobs.view;
+
+import javafx.application.Platform;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+
+import javax.swing.*;
+import java.io.File;
+import java.net.MalformedURLException;
+
+public class JStartPanel extends JComponent {
+    private static final String MEDIA_URL = "vid" + File.separator + "prequel.mp4";
+
+	public JStartPanel() {
+
+	}
+
+    public void startAnimation() {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                initSwingLater();
+            }
+        });
+    }
+
+	private void initFxLater(JFXPanel panel) {
+		MediaPlayer mediaPlayer = null;
+		try {
+			mediaPlayer = new MediaPlayer(new Media(new File(MEDIA_URL).toURI().toURL().toString()));
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+
+		MediaView mediaView = new MediaView(mediaPlayer);
+		Pane mvPane = new Pane();
+		mvPane.getChildren().add(mediaView);
+		mvPane.setMinSize(900, 700);
+		mvPane.setPrefSize(900, 700);
+		panel.setScene(new Scene(mvPane));
+	}
+
+	private void initSwingLater() {
+		final JFXPanel jFXPanel = new JFXPanel();
+		jFXPanel.setBounds(0, 0, 900, 700);
+		jFXPanel.setAlignmentY(0);
+
+		this.add(jFXPanel);
+
+		Platform.runLater(new Runnable() {
+			@Override
+			public void run() {
+				initFxLater(jFXPanel);
+			}
+		});
+	}
+}

@@ -1,40 +1,28 @@
 package com.blobs.util;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
+import java.net.MalformedURLException;
 
 /**
  * Created by root on 08.06.16.
  */
-public class AudioPlayer implements Runnable {
-    private String sound;
-    private long duration;
+public class AudioPlayer {
 
-    public void playSound(String sound, long duration) {
-        this.sound = sound;
-        this.duration = duration;
-        Thread thread = new Thread(this);
-        thread.start();
-    }
+    public void playSound(String sound, int cycleCount) {
+        MediaPlayer mediaPlayer;
 
-    @Override
-    public void run() {
-        Clip clip = null;
-        try(AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(sound).getAbsoluteFile())) {
-            clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
-
-            Thread.sleep(duration);
-        } catch(Exception ex) {
-            System.out.println("Error with playing sound.");
-            ex.printStackTrace();
-        } finally {
-            if (clip != null) {
-                clip.close();
-            }
+        try {
+            mediaPlayer = new MediaPlayer(new Media(new File(sound).toURI().toURL().toString()));
+            mediaPlayer.play();
+            mediaPlayer.setCycleCount(cycleCount);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
     }
 }

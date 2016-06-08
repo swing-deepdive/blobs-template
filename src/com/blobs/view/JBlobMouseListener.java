@@ -25,8 +25,6 @@ public class JBlobMouseListener implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         audioPlayer.playSound("audio" + File.separator + "kill.wav", 800);
         controller.killBlob(jBlob.getBlob());
-        audioPlayer = new AudioPlayer();
-        audioPlayer.playSound("audio" + File.separator + "theme.wav", 5000);
     }
 
     @Override
