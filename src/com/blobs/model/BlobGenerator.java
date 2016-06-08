@@ -1,5 +1,27 @@
 package com.blobs.model;
 
-public class BlobGenerator {
+import java.util.Random;
 
+public class BlobGenerator {
+	
+	private static BlobGenerator instance;
+	private static Random random;
+	
+	private BlobGenerator() {
+		random = new Random();
+	}
+	
+	public static BlobGenerator getInstance() {
+		if (instance == null) {
+			instance = new BlobGenerator();
+		}
+		return instance;
+	}
+	
+	public Blob generateBlob() {
+		
+		Blob blob = new StandardBlob(random.nextInt(), 3000);
+		
+		return blob;
+	}
 }
