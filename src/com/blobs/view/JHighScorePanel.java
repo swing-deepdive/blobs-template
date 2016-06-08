@@ -22,8 +22,7 @@ public class JHighScorePanel extends JPanel {
 
     public JHighScorePanel() {
         // Set the frame characteristics
-        setSize( 300, 200 );
-        setBackground(Color.gray);
+        setSize(300, 500);
 
         // Create a panel to hold all other components
         this.setLayout(null);
@@ -60,7 +59,6 @@ public class JHighScorePanel extends JPanel {
         table.setShowGrid(false);
         table.setBounds(200, 225, 700, 500);
         table.setRowHeight(30);
-        //table.setBorder(BorderFactory.createEmptyBorder(100, 100, 300, 300));
         table.setFont(new Font("PixelSplitter-Bold", Font.BOLD, 30));
         table.setBackground(new Color(0, 0, 0, 0));
 

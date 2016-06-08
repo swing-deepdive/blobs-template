@@ -17,8 +17,8 @@ public class Controller implements IController {
 	}
 
 	@Override
-	public void submitHighscore(String name, int score) {
-		this.model.submitHighscore(name, score);
+	public void submitHighscore(String name) {
+		this.model.submitHighscore(name);
 	}
 
 	@Override

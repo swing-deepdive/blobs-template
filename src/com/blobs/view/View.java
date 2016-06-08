@@ -60,25 +60,21 @@ public class View extends JFrame implements IView {
 	public void gameOver() {
 		gameOverPanel = new JGameOverPanel();
 		this.remove(this.gamePanel);
-		this.revalidate();
-		this.repaint();
 		gameOverPanel.setBounds(0, 0, 900, 700);
 		this.gamePanel = null;
 		this.add(gameOverPanel);
-	}
+        this.revalidate();
+        this.repaint();
+    }
 
 	@Override
 	public void gameStarted(Blob[] blobs) {
 		this.gamePanel = new JGamePanel();
 		remove(this.startPanel);
-		this.startPanel = null;
 		add(this.gamePanel);
 		this.gamePanel.initUI(blobs);
-	}
-
-	@Override
-	public void highscoreSubmitted(int score, String name) {
-
+        this.revalidate();
+        this.repaint();
 	}
 
 	@Override
@@ -93,10 +89,10 @@ public class View extends JFrame implements IView {
         highScorePanel = new JHighScorePanel();
         highScorePanel.initTable(leaderboard);
         this.remove(this.gameOverPanel);
-        this.revalidate();
-        this.repaint();
         highScorePanel.setBounds(0, 0, 900, 700);
         this.gameOverPanel = null;
         this.add(highScorePanel);
+        this.revalidate();
+        this.repaint();
 	}
 }

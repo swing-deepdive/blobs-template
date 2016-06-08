@@ -6,7 +6,7 @@ public interface IController {
 	
 	public void killBlob(Blob blob);
 	
-	public void submitHighscore(String name, int score);
+	public void submitHighscore(String name);
 	
 	public void startGame();
 	

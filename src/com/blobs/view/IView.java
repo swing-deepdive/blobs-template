@@ -22,8 +22,6 @@ public interface IView {
 
     void gameStarted(Blob[] blobs);
 
-    void highscoreSubmitted(int score, String name);
-
     void run();
 
     void showLeaderboards(Set<Ranking> leaderboard);
