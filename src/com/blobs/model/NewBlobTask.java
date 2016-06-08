@@ -5,9 +5,9 @@ import java.util.Timer;
 
 public class NewBlobTask extends TimerTask {
 
-	Timer timer;
-	int time;
-	Game game;
+	private Timer timer;
+	private int time;
+	private Game game;
 		
 	public NewBlobTask(Game game, Timer timer, int time) {
 		this.game = game;
@@ -18,7 +18,9 @@ public class NewBlobTask extends TimerTask {
 	@Override
 	public void run() {
 		this.game.addBlob();
-		timer.schedule(new NewBlobTask(this.game, this.timer, (int) (time * 0.95)), (int) (time * 0.8));
+		int newTime = (int) (time * 0.95);
+		TimerTask task = new NewBlobTask(this.game, this.timer, newTime);
+		this.timer.schedule(task, newTime);
 	}
 
 }

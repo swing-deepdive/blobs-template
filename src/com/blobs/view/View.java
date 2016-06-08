@@ -21,14 +21,13 @@ public class View extends JFrame implements IView {
 		this.setResizable(false);
 
         // Create and set up grid
-        gamePanel = new JGamePanel();
         startPanel = new JStartPanel();
 
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         getContentPane().setBackground(new Color(44, 165, 124));
-        //setBackground(new Color(44, 165, 124));
-        add(gamePanel);
+        setBackground(new Color(44, 165, 124));
+        add(startPanel);
 
         this.setVisible(true);
 	}
@@ -64,6 +63,10 @@ public class View extends JFrame implements IView {
 
     @Override
     public void gameStarted(Blob[] blobs) {
+        this.gamePanel = new JGamePanel();
+        remove(this.startPanel);
+        this.startPanel = null;
+        add(this.gamePanel);
         this.gamePanel.initUI(blobs);
     }
 
@@ -74,7 +77,6 @@ public class View extends JFrame implements IView {
 
     @Override
     public void run() {
-        controller.startGame();
         startPanel.startAnimation();
         AudioPlayer audioPlayer = new AudioPlayer();
         audioPlayer.playSound("audio" + File.separator + "theme.mp3", MediaPlayer.INDEFINITE);
