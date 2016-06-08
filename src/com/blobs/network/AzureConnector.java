@@ -19,8 +19,8 @@ public class AzureConnector {
 	public AzureConnector(String gameId) {
 		this.gameId = gameId;
 	}
-
-	public void getScores() {
+	
+	public String getScores() {
 		try {
 			URL obj = new URL(Constants.API_URL + "&id=" + gameId);
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -32,11 +32,12 @@ public class AzureConnector {
 				response.append(inputLine);
 			}
 			in.close();
-
+			return response.toString();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return "";
 	}
 
 	public void putScore(String name, int score) {
