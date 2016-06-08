@@ -4,8 +4,8 @@ import java.util.TimerTask;
 
 public class CheckGameTask extends TimerTask {
 
-	Gamefield field;
-	Game game;
+	private Gamefield field;
+	private Game game;
 	
 	public CheckGameTask(Game game, Gamefield field) {
 		this.field = field;
@@ -14,10 +14,9 @@ public class CheckGameTask extends TimerTask {
 	
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		if (!this.field.checkBlobsAlive()) {
+        if (!this.field.checkBlobsAlive()) {
 			this.game.gameOver();
 		}
-	}
+    }
 
 }

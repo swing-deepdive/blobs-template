@@ -24,24 +24,17 @@ public class JBlobMouseListener implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        System.out.println("pressed");
-
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        System.out.println("released");
-
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        System.out.println("entered");
-
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        System.out.println("exited");
     }
 }

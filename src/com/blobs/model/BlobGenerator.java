@@ -1,6 +1,7 @@
 package com.blobs.model;
 
 import java.util.Random;
+import java.util.regex.Matcher;
 
 public class BlobGenerator {
 	
@@ -19,9 +20,7 @@ public class BlobGenerator {
 	}
 	
 	public Blob generateBlob(int location) {
-		
-		Blob blob = new StandardBlob(location, random.nextInt(3) + 2, 3000);
-		
-		return blob;
-	}
+		int score = (int) (Math.random() * 5.0) + 1;
+		return new StandardBlob(location, score, 3000);
+    }
 }

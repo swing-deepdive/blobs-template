@@ -36,7 +36,7 @@ public class JBlobGrid extends GridLayout {
 
     public void showSlot(Blob blob) {
         JBlob jblob = jBlobList.get(blob.getId());
-        jblob.showBlob();
+        jblob.showBlob(blob);
     }
 
     public void hideSlot(Blob blob) {

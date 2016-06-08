@@ -12,12 +12,6 @@ public class Game implements IModel{
 	private int score;
 	private IView view;
 	
-	public static void main(String[] args) {
-		View v = new View();
-		Game g = new Game(v);
-		g.startGame();
-	}
-	
 	public Game(IView view) {
 		this.view = view;
 		reset();
@@ -53,7 +47,7 @@ public class Game implements IModel{
 	public void startGame() {
 		Blob[] nullBlobs = new Blob[this.field.getLength()];
 		for (int i = 0; i < this.field.getLength(); i++) {
-			nullBlobs[i] = new NullBlob(i, 0, Integer.MAX_VALUE);
+			nullBlobs[i] = new StandardBlob(i, 0, Integer.MAX_VALUE);
 		}
 		this.view.gameStarted(nullBlobs);
 		this.gameTimer.scheduleAtFixedRate(new CheckGameTask(this, this.field), 50, 50);

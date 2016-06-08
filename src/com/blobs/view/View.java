@@ -8,7 +8,7 @@ import java.awt.*;
 import java.util.*;
 
 public class View extends JFrame implements IView {
-    private JBlobGrid jBlobGrid;
+    private JGamePanel gamePanel;
     private IController controller;
 
 	public View() {
@@ -16,13 +16,13 @@ public class View extends JFrame implements IView {
 		this.setResizable(false);
 
         // Create and set up grid
-        jBlobGrid = new JBlobGrid(3, 3);
+        gamePanel = new JGamePanel();
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         // Initialize the grid with images etc.
         getContentPane().setBackground(new Color(44, 165, 124));
         setBackground(new Color(44, 165, 124));
-
+        add(gamePanel);
         // Display the window
         this.setVisible(true);
 	}
@@ -34,17 +34,17 @@ public class View extends JFrame implements IView {
 
     @Override
     public void showSlot(Blob blob) {
-        jBlobGrid.showSlot(blob);
+        this.gamePanel.getGrid().showSlot(blob);
     }
 
     @Override
     public void hideSlot(Blob blob) {
-        jBlobGrid.hideSlot(blob);
+        this.gamePanel.getGrid().hideSlot(blob);
     }
 
     @Override
     public void updateScore(int score) {
-
+        this.gamePanel.updateScore(score);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class View extends JFrame implements IView {
 
     @Override
     public void gameStarted(Blob[] blobs) {
-        this.jBlobGrid.init(this.getContentPane(), blobs);
+        this.gamePanel.getGrid().init(gamePanel, blobs);
     }
 
     @Override

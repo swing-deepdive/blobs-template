@@ -13,8 +13,7 @@ public abstract class JBlob extends JLabel {
 
     public JBlob(Blob blob) {
         super("", new ImageIcon(IMG_PATH + "background.png"), JLabel.CENTER);
-        this.blob = blob;
-        showBlob();
+        showBlob(blob);
 
         this.addMouseListener(new JBlobMouseListener(this, MVC.getController()));
     }
@@ -23,7 +22,8 @@ public abstract class JBlob extends JLabel {
         return blob;
     }
 
-    public void showBlob() {
+    public void showBlob(Blob blob) {
+        this.blob = blob;
         setVisible(true);
         int random = (int) (Math.random() * 8.0) + 1;
         setIcon(new ImageIcon(IMG_PATH + "monster" + random + ".png"));
