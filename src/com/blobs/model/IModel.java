@@ -4,10 +4,10 @@ public interface IModel {
 	
 	void startGame();
 	
-	// void pauseGame();
-	
-	void endGame();
+	void restartGame();
 	
 	void killBlob(int id);
+	
+	void submitHighscore(String name, int score);
 	
 }

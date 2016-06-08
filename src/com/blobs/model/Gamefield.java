@@ -1,7 +1,5 @@
 package com.blobs.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Gamefield {
@@ -15,6 +13,13 @@ public class Gamefield {
 		this.width = width;
 		this.height = height;
 		blobs = new Blob[width * height];
+	}
+	
+	public int getBlobScore(int location) {
+		if (blobs[location] != null) {
+			return blobs[location].getScore();
+		}
+		return 0;
 	}
 
 	public Blob addBlob() {
@@ -31,6 +36,11 @@ public class Gamefield {
 	}
 	
 	public boolean checkBlobsAlive() {
+		for (Blob blob : blobs) {
+			if (blob != null && !blob.isAlive()) {
+				return false;
+			}
+		}
 		return true;
 	}
 
