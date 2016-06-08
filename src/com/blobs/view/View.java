@@ -62,6 +62,7 @@ public class View extends JFrame implements IView {
 		gameOverPanel.setBounds(0, 0, 900, 700);
 		this.gamePanel = null;
 		this.add(gameOverPanel);
+		gameOverPanel.setupUI();
 	}
 
 	@Override
