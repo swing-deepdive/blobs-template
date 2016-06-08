@@ -15,8 +15,7 @@ public class JBlobGrid extends GridLayout {
 
     public JBlobGrid(int rows, int cols) {
         super(rows, cols);
-
-        jBlobList = new ArrayList<>();
+        this.jBlobList = new ArrayList<>();
     }
 
     public void init(Container pane, Blob[] blob) {
@@ -27,6 +26,7 @@ public class JBlobGrid extends GridLayout {
 
         for (int i = 0; i < 9; i++) {
             JBlob jBlob = new JStandardBlob(blob[i]);
+            jBlob.hideBlob();
             jblobGridPanel.add(jBlob, BorderLayout.CENTER);
             jBlobList.add(jBlob);
         }
@@ -36,7 +36,7 @@ public class JBlobGrid extends GridLayout {
 
     public void showSlot(Blob blob) {
         JBlob jblob = jBlobList.get(blob.getId());
-        jblob.hideBlob();
+        jblob.showBlob();
     }
 
     public void hideSlot(Blob blob) {

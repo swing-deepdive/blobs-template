@@ -20,10 +20,10 @@ public class View extends JFrame implements IView {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         // Initialize the grid with images etc.
+        getContentPane().setBackground(new Color(44, 165, 124));
         setBackground(new Color(44, 165, 124));
 
         // Display the window
-        this.pack();
         this.setVisible(true);
 	}
 

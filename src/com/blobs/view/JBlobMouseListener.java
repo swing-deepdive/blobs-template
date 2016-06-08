@@ -1,5 +1,7 @@
 package com.blobs.view;
 
+import com.blobs.controller.IController;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -8,14 +10,16 @@ import java.awt.event.MouseListener;
  */
 public class JBlobMouseListener implements MouseListener {
     private JBlob jBlob;
+    private IController controller;
 
-    public JBlobMouseListener(JBlob jBlob) {
+    public JBlobMouseListener(JBlob jBlob, IController controller) {
         this.jBlob = jBlob;
+        this.controller = controller;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        // TODO connect to le controlleur
+        controller.killBlob(jBlob.getBlob());
     }
 
     @Override

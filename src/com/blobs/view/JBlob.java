@@ -1,5 +1,7 @@
 package com.blobs.view;
 
+import com.blobs.MVC;
+import com.blobs.controller.IController;
 import com.blobs.model.Blob;
 
 import javax.swing.*;
@@ -10,11 +12,11 @@ public abstract class JBlob extends JLabel {
     private Blob blob;
 
     public JBlob(Blob blob) {
-        super("", new ImageIcon(""), JLabel.CENTER);
-        showBlob();
+        super("", new ImageIcon(IMG_PATH + "background.png"), JLabel.CENTER);
         this.blob = blob;
+        showBlob();
 
-        this.addMouseListener(new JBlobMouseListener(this));
+        this.addMouseListener(new JBlobMouseListener(this, MVC.getController()));
     }
 
     public Blob getBlob() {
