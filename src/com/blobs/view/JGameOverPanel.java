@@ -1,25 +1,42 @@
 package com.blobs.view;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import com.blobs.Constants;
+
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by root on 08.06.16.
  */
 public class JGameOverPanel extends JComponent {
-    private JTextField textField = new JTextField(20);
 
-    public JGameOverPanel() {
-        this.setBackground(new Color(255, 255, 255));
-        setupNameInput();
-        this.repaint();
-    }
+	public JGameOverPanel() {
 
-    private void setupNameInput() {
-        textField = new JTextField();
-        textField.setFont(new Font("PixelSplitter-Bold", Font.BOLD, 32));
-        textField.setForeground(new Color(44, 165, 124));
-        //textField.setBorder(BorderFactory.createEmptyBorder( 0, 0, 25, 0 ));
-        this.add(textField);
-    }
+		JTextField textField = new JTextField();
+		textField.setBounds(350, 340, 470, 120);
+		textField.setForeground(new Color(7, 112, 152));
+		textField.setBackground(new Color(0, 0, 0, 0));
+		textField.setBorder(null);
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setFont(new Font("PixelSplitter-Bold", Font.BOLD, 57));
+		this.add(textField);
+		this.revalidate();
+		this.repaint();
+	}
+
+	@Override
+	protected void paintComponent(Graphics g) {
+
+		super.paintComponent(g);
+		try {
+			g.drawImage(ImageIO.read(new File("img" + File.separator + "gameover.png")), 0, 0, null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
