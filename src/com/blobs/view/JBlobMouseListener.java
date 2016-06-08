@@ -17,6 +17,7 @@ public class JBlobMouseListener implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        jBlob.update((int) (Math.random() * 8.0) + 1);
         handleClick();
     }
 

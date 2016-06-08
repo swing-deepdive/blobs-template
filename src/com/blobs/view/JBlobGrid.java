@@ -2,6 +2,7 @@ package com.blobs.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +20,12 @@ public class JBlobGrid extends GridLayout {
 
     public void init(Container pane) {
         final JPanel jblobGridPanel = new JPanel();
+        jblobGridPanel.setBackground(new Color(44, 165, 124));
+
         jblobGridPanel.setLayout(this);
 
         for (int i = 0; i < 9; i++) {
-            JBlob jBlob = new JStandardBlob("sf.png", i, BlobState.GOOD_BLOB);
+            JBlob jBlob = new JStandardBlob("img/monster1.png", i, BlobState.GOOD_BLOB);
             jblobGridPanel.add(jBlob, BorderLayout.CENTER);
             jBlobList.add(jBlob);
         }
@@ -30,7 +33,9 @@ public class JBlobGrid extends GridLayout {
         pane.add(jblobGridPanel, BorderLayout.NORTH);
     }
 
-    public void updateSlot(int index, JBlob jBlob) {
+    public void updateSlot(int index) {
         JBlob blob = jBlobList.get(index);
+        int random = (int) (Math.random() * 8.0) + 1;
+        blob.update(random);
     }
 }
