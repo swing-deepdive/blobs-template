@@ -5,14 +5,16 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.sql.Blob;
 
 public abstract class JBlob extends JLabel {
     private static final String IMG_PATH = "img" + File.separator;
     private int locationID;
 
-    public JBlob(String imagePath, int locationID) {
-        super("", new ImageIcon(imagePath), JLabel.CENTER);
-        this.locationID = locationID;
+    public JBlob(Blob blob) {
+        super("", new ImageIcon(""), JLabel.CENTER);
+        showBlob();
+        this.locationID = blob.get;
 
         this.addMouseListener(new JBlobMouseListener(this));
     }
@@ -24,7 +26,6 @@ public abstract class JBlob extends JLabel {
     public void showBlob() {
         setVisible(true);
         int random = (int) (Math.random() * 8.0) + 1;
-
         setIcon(new ImageIcon(IMG_PATH + "monster" + random + ".png"));
     }
 
