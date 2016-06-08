@@ -2,6 +2,7 @@ package com.blobs.view;
 
 import com.blobs.model.Blob;
 
+import java.util.List;
 import java.util.Map;
 
 public interface IView {
@@ -14,7 +15,7 @@ public interface IView {
 
     void gameOver();
 
-    void gameStarted();
+    void gameStarted(Blob[] blobs);
 
     void highscoreSubmitted(int score, String name);
 

@@ -19,14 +19,14 @@ public class JBlobGrid extends GridLayout {
         jBlobList = new ArrayList<>();
     }
 
-    public void init(Container pane) {
+    public void init(Container pane, Blob[] blob) {
         final JPanel jblobGridPanel = new JPanel();
         jblobGridPanel.setBackground(new Color(44, 165, 124));
 
         jblobGridPanel.setLayout(this);
 
         for (int i = 0; i < 9; i++) {
-            JBlob jBlob = new JNullBlob();
+            JBlob jBlob = new JStandardBlob(blob[i]);
             jblobGridPanel.add(jBlob, BorderLayout.CENTER);
             jBlobList.add(jBlob);
         }

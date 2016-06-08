@@ -4,7 +4,7 @@ import com.blobs.model.Blob;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Map;
+import java.util.*;
 
 public class View extends JFrame implements IView {
     private JBlobGrid jBlobGrid;
@@ -46,8 +46,8 @@ public class View extends JFrame implements IView {
     }
 
     @Override
-    public void gameStarted() {
-        jBlobGrid.init(this.getContentPane());
+    public void gameStarted(Blob[] blobs) {
+        jBlobGrid.init(this.getContentPane(), blobs);
     }
 
     @Override
