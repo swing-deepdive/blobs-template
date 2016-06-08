@@ -8,8 +8,9 @@ import java.awt.event.MouseListener;
 public abstract class JBlob extends JLabel {
     private int locationID;
     private ImageIcon image;
+    private BlobState blobState;
 
-    public JBlob(String imagePath, int locationID) {
+    public JBlob(String imagePath, int locationID, BlobState blobState) {
         super("", new ImageIcon(imagePath), JLabel.CENTER);
         this.locationID = locationID;
 
@@ -18,5 +19,9 @@ public abstract class JBlob extends JLabel {
 
     public int getLocationID() {
         return locationID;
+    }
+
+    public BlobState getBlobState() {
+        return blobState;
     }
 }

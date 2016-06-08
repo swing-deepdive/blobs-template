@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class JStandardBlob extends JBlob {
 
-    public JStandardBlob(String imagePath, int locationID) {
-        super(imagePath, locationID);
+    public JStandardBlob(String imagePath, int locationID, BlobState blobState) {
+        super(imagePath, locationID, blobState);
     }
 }

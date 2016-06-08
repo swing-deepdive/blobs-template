@@ -1,5 +1,7 @@
 package com.blobs.view;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -15,7 +17,7 @@ public class JBlobMouseListener implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("clicked");
+        handleClick();
     }
 
     @Override
@@ -39,5 +41,17 @@ public class JBlobMouseListener implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
         System.out.println("exited");
+    }
+
+    private void handleClick() {
+        switch (jBlob.getBlobState()) {
+            case GOOD_BLOB:
+                return;
+            case BAD_BLOB:
+                return;
+            default:
+                return;
+
+        }
     }
 }
