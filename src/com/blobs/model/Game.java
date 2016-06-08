@@ -46,11 +46,7 @@ public class Game implements IModel{
 
 	@Override
 	public void startGame() {
-		Blob[] nullBlobs = new Blob[this.field.getLength()];
-		for (int i = 0; i < this.field.getLength(); i++) {
-			nullBlobs[i] = new StandardBlob(i, 0, Integer.MAX_VALUE);
-		}
-		this.view.gameStarted(nullBlobs);
+		this.view.gameStarted();
 		this.gameTimer.scheduleAtFixedRate(new CheckGameTask(this, this.field), 50, 50);
 		this.spawnTimer.schedule(new NewBlobTask(this, this.spawnTimer, 2000), 2000);
 	}
