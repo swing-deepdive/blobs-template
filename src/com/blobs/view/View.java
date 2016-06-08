@@ -1,6 +1,7 @@
 package com.blobs.view;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class View extends JFrame implements IView {
 
@@ -15,8 +16,20 @@ public class View extends JFrame implements IView {
         // Initialize the grid with images etc.
         jBlobGrid.init(this.getContentPane());
 
+        setBackground(new Color(44, 165, 124));
+
         // Display the window
         this.pack();
         this.setVisible(true);
 	}
+
+    @Override
+    public void add(int index) {
+
+    }
+
+    @Override
+    public void remove(int index) {
+
+    }
 }
