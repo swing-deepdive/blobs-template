@@ -1,9 +1,5 @@
 package com.blobs.view;
 
-import com.blobs.view.animation.Animation;
-import com.blobs.view.animation.AnimationManager;
-import com.blobs.view.animation.MoveAnimation;
-
 import javax.swing.*;
 
 public class View extends JFrame implements IView {
