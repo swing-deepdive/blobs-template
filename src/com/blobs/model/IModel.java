@@ -6,7 +6,7 @@ public interface IModel {
 	
 	void restartGame();
 	
-	void killBlob(int id);
+	void killBlob(Blob blob);
 	
 	void submitHighscore(String name, int score);
 	

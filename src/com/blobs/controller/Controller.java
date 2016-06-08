@@ -1,5 +1,6 @@
 package com.blobs.controller;
 
+import com.blobs.model.Blob;
 import com.blobs.model.IModel;
 
 public class Controller implements IController {
@@ -11,9 +12,9 @@ public class Controller implements IController {
 	}
 	
 	@Override
-	public void killBlob(int location) {
+	public void killBlob(Blob blob) {
 		
-		this.model.killBlob(location);
+		this.model.killBlob(blob);
 	}
 
 	@Override

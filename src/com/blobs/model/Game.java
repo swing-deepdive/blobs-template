@@ -30,10 +30,10 @@ public class Game implements IModel{
 		this.score = 0;
 	}
 	
-	public void killBlob(int id) {
-		this.score += this.field.getBlobScore(id);
-		this.field.removeBlob(id);
-		this.view.hideSlot(id);
+	public void killBlob(Blob blob) {
+		this.score += blob.getScore();
+		this.field.removeBlob(blob.getId());
+		this.view.hideSlot(blob);
 		this.view.updateScore(this.score);
 	}
 	
@@ -51,11 +51,11 @@ public class Game implements IModel{
 
 	@Override
 	public void startGame() {
-		this.view.gameStarted();
-
+		Blob[] nullBlobs = new Blob[this.field.getLength()];
 		for (int i = 0; i < this.field.getLength(); i++) {
-			this.view.showSlot(new NullBlob(i, 0, Integer.MAX_VALUE));
+			nullBlobs[i] = new NullBlob(i, 0, Integer.MAX_VALUE);
 		}
+		this.view.gameStarted(nullBlobs);
 		this.gameTimer.scheduleAtFixedRate(new CheckGameTask(this, this.field), 50, 50);
 		this.spawnTimer.schedule(new NewBlobTask(this, this.spawnTimer, 2000), 2000);
 	}
