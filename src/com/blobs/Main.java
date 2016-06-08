@@ -12,6 +12,7 @@ public class Main {
 		Game game = new Game(view);
 		Controller controller = new Controller(game);
 		view.setController(controller);
+		view.run();
 	}
 
 }
