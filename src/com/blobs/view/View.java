@@ -20,7 +20,6 @@ public class View extends JFrame implements IView {
 		this.setResizable(false);
 
         // Create and set up grid
-        //gamePanel = new JGamePanel();
         startPanel = new JStartPanel();
 
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -60,6 +59,10 @@ public class View extends JFrame implements IView {
 
     @Override
     public void gameStarted(Blob[] blobs) {
+        this.gamePanel = new JGamePanel();
+        remove(this.startPanel);
+        this.startPanel = null;
+        add(this.gamePanel);
         this.gamePanel.getGrid().init(gamePanel, blobs);
     }
 

@@ -9,14 +9,25 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 
 import javax.swing.*;
+
+import com.blobs.MVC;
+
+import java.awt.Color;
+import java.awt.event.ComponentListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.File;
 import java.net.MalformedURLException;
 
-public class JStartPanel extends JComponent {
+public class JStartPanel extends JComponent implements MouseListener{
     private static final String MEDIA_URL = "vid" + File.separator + "prequel.mp4";
 
 	public JStartPanel() {
-
+		JComponent button = new JPanel();
+		button.setBounds(220, 275, 450, 140);
+		button.setBackground(new Color(0,0,0,0));
+		button.addMouseListener(this);
+		this.add(button);
 	}
 
     public void startAnimation() {
@@ -59,5 +70,26 @@ public class JStartPanel extends JComponent {
 				initFxLater(jFXPanel);
 			}
 		});
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		MVC.getController().startGame();
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
 	}
 }
