@@ -1,12 +1,14 @@
 package com.blobs.view;
 
+import com.blobs.model.Blob;
+
 import java.util.Map;
 
 public interface IView {
 
-    void showSlot(int index);
+    void showSlot(Blob blob);
 
-    void hideSlot(int index);
+    void hideSlot(Blob blob);
 
     void updateScore(int score);
 

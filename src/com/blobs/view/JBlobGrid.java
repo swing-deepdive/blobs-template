@@ -1,5 +1,7 @@
 package com.blobs.view;
 
+import com.blobs.model.Blob;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ public class JBlobGrid extends GridLayout {
         jblobGridPanel.setLayout(this);
 
         for (int i = 0; i < 9; i++) {
-            JBlob jBlob = new JStandardBlob(i);
+            JBlob jBlob = new JNullBlob();
             jblobGridPanel.add(jBlob, BorderLayout.CENTER);
             jBlobList.add(jBlob);
         }
@@ -32,13 +34,13 @@ public class JBlobGrid extends GridLayout {
         pane.add(jblobGridPanel, BorderLayout.NORTH);
     }
 
-    public void showSlot(int index) {
-        JBlob blob = jBlobList.get(index);
-        blob.hideBlob();
+    public void showSlot(Blob blob) {
+        JBlob jblob = jBlobList.get(blob.getId());
+        jblob.hideBlob();
     }
 
-    public void hideSlot(int index) {
-        JBlob blob = jBlobList.get(index);
-        blob.hideBlob();
+    public void hideSlot(Blob blob) {
+        JBlob jblob = jBlobList.get(blob.getId());
+        jblob.hideBlob();
     }
 }

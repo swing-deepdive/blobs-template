@@ -1,26 +1,24 @@
 package com.blobs.view;
 
+import com.blobs.model.Blob;
+
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.File;
-import java.sql.Blob;
 
 public abstract class JBlob extends JLabel {
     private static final String IMG_PATH = "img" + File.separator;
-    private int locationID;
+    private Blob blob;
 
     public JBlob(Blob blob) {
         super("", new ImageIcon(""), JLabel.CENTER);
         showBlob();
-        this.locationID = blob.get;
+        this.blob = blob;
 
         this.addMouseListener(new JBlobMouseListener(this));
     }
 
-    public int getLocationID() {
-        return locationID;
+    public Blob getBlob() {
+        return blob;
     }
 
     public void showBlob() {

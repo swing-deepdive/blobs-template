@@ -1,8 +1,9 @@
 package com.blobs.view;
 
+import com.blobs.model.Blob;
+
 import javax.swing.*;
 import java.awt.*;
-import java.sql.Blob;
 
 public class JStandardBlob extends JBlob {
 

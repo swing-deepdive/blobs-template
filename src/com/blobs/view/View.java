@@ -1,5 +1,7 @@
 package com.blobs.view;
 
+import com.blobs.model.Blob;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Map;
@@ -16,8 +18,6 @@ public class View extends JFrame implements IView {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         // Initialize the grid with images etc.
-        jBlobGrid.init(this.getContentPane());
-
         setBackground(new Color(44, 165, 124));
 
         // Display the window
@@ -26,13 +26,13 @@ public class View extends JFrame implements IView {
 	}
 
     @Override
-    public void showSlot(int index) {
-        jBlobGrid.showSlot(index);
+    public void showSlot(Blob blob) {
+        jBlobGrid.showSlot(blob);
     }
 
     @Override
-    public void hideSlot(int index) {
-        jBlobGrid.hideSlot(index);
+    public void hideSlot(Blob blob) {
+        jBlobGrid.hideSlot(blob);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class View extends JFrame implements IView {
 
     @Override
     public void gameStarted() {
-
+        jBlobGrid.init(this.getContentPane());
     }
 
     @Override
