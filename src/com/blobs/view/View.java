@@ -16,6 +16,7 @@ public class View extends JFrame implements IView {
 	private JGamePanel gamePanel;
 	private JStartPanel startPanel;
 	private IController controller;
+	private JGameOverPanel gameOverPanel;
 
 	public View() {
 		this.setSize(900, 700);
@@ -55,14 +56,13 @@ public class View extends JFrame implements IView {
 
 	@Override
 	public void gameOver() {
-		JGameOverPanel gameOverPanel = new JGameOverPanel();
+		gameOverPanel = new JGameOverPanel();
 		this.remove(this.gamePanel);
 		this.revalidate();
 		this.repaint();
 		gameOverPanel.setBounds(0, 0, 900, 700);
 		this.gamePanel = null;
 		this.add(gameOverPanel);
-		gameOverPanel.setupUI();
 	}
 
 	@Override
