@@ -51,9 +51,13 @@ public class Game implements IModel{
 
 	@Override
 	public void startGame() {
+		this.view.gameStarted();
+
+		for (int i = 0; i < this.field.getLength(); i++) {
+			this.view.showSlot(new NullBlob(i, 0, Integer.MAX_VALUE));
+		}
 		this.gameTimer.scheduleAtFixedRate(new CheckGameTask(this, this.field), 50, 50);
 		this.spawnTimer.schedule(new NewBlobTask(this, this.spawnTimer, 2000), 2000);
-		this.view.gameStarted();
 	}
 
 	@Override

@@ -21,6 +21,10 @@ public class Gamefield {
 		}
 		return 0;
 	}
+	
+	public int getLength() {
+		return this.width * this.height;
+	}
 
 	public Blob addBlob() {
 		int location;
