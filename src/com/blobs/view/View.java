@@ -1,5 +1,6 @@
 package com.blobs.view;
 
+import com.blobs.controller.IController;
 import com.blobs.model.Blob;
 
 import javax.swing.*;
@@ -8,6 +9,7 @@ import java.util.*;
 
 public class View extends JFrame implements IView {
     private JBlobGrid jBlobGrid;
+    private IController controller;
 
 	public View() {
 		this.setSize(900, 700);
@@ -24,6 +26,11 @@ public class View extends JFrame implements IView {
         this.pack();
         this.setVisible(true);
 	}
+
+    @Override
+    public void setController(IController controller) {
+        this.controller = controller;
+    }
 
     @Override
     public void showSlot(Blob blob) {

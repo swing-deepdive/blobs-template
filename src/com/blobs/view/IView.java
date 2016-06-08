@@ -1,11 +1,14 @@
 package com.blobs.view;
 
+import com.blobs.controller.IController;
 import com.blobs.model.Blob;
 
 import java.util.List;
 import java.util.Map;
 
 public interface IView {
+
+    void setController(IController controller);
 
     void showSlot(Blob blob);
 
