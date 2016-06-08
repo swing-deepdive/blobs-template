@@ -8,4 +8,6 @@ public interface IModel {
 	
 	void endGame();
 	
+	void killBlob(int id);
+	
 }
