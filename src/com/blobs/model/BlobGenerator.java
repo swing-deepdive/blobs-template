@@ -20,7 +20,7 @@ public class BlobGenerator {
 	
 	public Blob generateBlob() {
 		
-		Blob blob = new StandardBlob(random.nextInt(), 3000);
+		Blob blob = new StandardBlob(random.nextInt(), random.nextInt(3) + 2, 3000);
 		
 		return blob;
 	}

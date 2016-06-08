@@ -14,6 +14,13 @@ public class Gamefield {
 		this.height = height;
 		blobs = new Blob[width * height];
 	}
+	
+	public int getBlobScore(int location) {
+		if (blobs[location] != null) {
+			return blobs[location].getScore();
+		}
+		return 0;
+	}
 
 	public Blob addBlob() {
 		int location;
