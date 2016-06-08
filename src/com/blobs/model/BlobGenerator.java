@@ -18,9 +18,9 @@ public class BlobGenerator {
 		return instance;
 	}
 	
-	public Blob generateBlob() {
+	public Blob generateBlob(int location) {
 		
-		Blob blob = new StandardBlob(random.nextInt(), random.nextInt(3) + 2, 3000);
+		Blob blob = new StandardBlob(location, random.nextInt(3) + 2, 3000);
 		
 		return blob;
 	}

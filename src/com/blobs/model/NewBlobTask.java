@@ -7,16 +7,18 @@ public class NewBlobTask extends TimerTask {
 
 	Timer timer;
 	int time;
+	Game game;
 		
-	public NewBlobTask(Timer timer, int time) {
+	public NewBlobTask(Game game, Timer timer, int time) {
+		this.game = game;
 		this.timer = timer;
 		this.time = time;
 	}
 	
 	@Override
 	public void run() {
-		//
-		timer.schedule(new NewBlobTask(this.timer, (int) (time * 0.95)), (int) (time * 0.8));
+		this.game.addBlob();
+		timer.schedule(new NewBlobTask(this.game, this.timer, (int) (time * 0.95)), (int) (time * 0.8));
 	}
 
 }
