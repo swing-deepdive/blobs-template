@@ -16,11 +16,6 @@ public abstract class JBlob extends JPanel {
 
         setSize(shapeWidth * 2, shapeHeight * 2);
         setVisible(true);
-
-        this.xLocation = xLocation;
-        this.yLocation = yLocation;
-        this.shapeHeight = shapeHeight;
-        this.shapeWidth = shapeWidth;
     }
 
     public int getXLocation() {

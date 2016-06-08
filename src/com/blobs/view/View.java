@@ -4,19 +4,23 @@ import com.blobs.view.animation.Animation;
 import com.blobs.view.animation.AnimationManager;
 import com.blobs.view.animation.MoveAnimation;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class View extends JFrame implements IView {
 
 	public View() {
 		this.setSize(900, 700);
-		this.setVisible(true);
+		this.setResizable(false);
 
-        AnimationManager animationManager = AnimationManager.getInstance(50);
-        JBlob jBlob = new JStandardBlob(40, 40, 60, 60);
-        Animation animation = new MoveAnimation(jBlob, 160, 160, 10000);
-        this.add(jBlob);
+        // Create and set up grid
+        JBlobGrid jBlobGrid = new JBlobGrid(3, 3);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        animationManager.addAnimation(animation);
+        // Initialize the grid with images etc.
+        jBlobGrid.init(this.getContentPane());
+
+        // Display the window
+        this.pack();
+        this.setVisible(true);
 	}
 }

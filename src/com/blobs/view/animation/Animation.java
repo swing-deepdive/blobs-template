@@ -6,8 +6,7 @@ import com.blobs.view.JBlob;
  * Created by root on 07.06.16.
  */
 public abstract class Animation {
-    protected JBlob jBlob;
-    protected int updateSpeed;
+    private JBlob jBlob;
     protected final int totalSteps;
     protected int currentStep;
 
