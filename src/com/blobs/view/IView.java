@@ -1,5 +1,7 @@
 package com.blobs.view;
 
+import java.util.Map;
+
 public interface IView {
 
     void showSlot(int index);
@@ -13,4 +15,6 @@ public interface IView {
     void gameStarted();
 
     void highscoreSubmitted(int score, String name);
+
+    void showLeaderboards(Map<String, Integer> leaderboardMap);
 }

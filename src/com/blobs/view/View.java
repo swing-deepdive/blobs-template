@@ -2,6 +2,7 @@ package com.blobs.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Map;
 
 public class View extends JFrame implements IView {
     private JBlobGrid jBlobGrid;
@@ -25,12 +26,12 @@ public class View extends JFrame implements IView {
 	}
 
     @Override
-    public void showBlob(int index) {
+    public void showSlot(int index) {
         jBlobGrid.showSlot(index);
     }
 
     @Override
-    public void hideBlob(int index) {
+    public void hideSlot(int index) {
         jBlobGrid.hideSlot(index);
     }
 
@@ -51,6 +52,11 @@ public class View extends JFrame implements IView {
 
     @Override
     public void highscoreSubmitted(int score, String name) {
+
+    }
+
+    @Override
+    public void showLeaderboards(Map<String, Integer> leaderboardMap) {
 
     }
 }

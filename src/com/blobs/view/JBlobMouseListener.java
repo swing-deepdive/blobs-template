@@ -17,8 +17,7 @@ public class JBlobMouseListener implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        jBlob.update((int) (Math.random() * 8.0) + 1);
-        handleClick();
+        // TODO connect to le controlleur
     }
 
     @Override
@@ -42,17 +41,5 @@ public class JBlobMouseListener implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
         System.out.println("exited");
-    }
-
-    private void handleClick() {
-        switch (jBlob.getBlobState()) {
-            case GOOD_BLOB:
-                return;
-            case BAD_BLOB:
-                return;
-            default:
-                return;
-
-        }
     }
 }

@@ -24,7 +24,7 @@ public class JBlobGrid extends GridLayout {
         jblobGridPanel.setLayout(this);
 
         for (int i = 0; i < 9; i++) {
-            JBlob jBlob = new JStandardBlob("img/monster1.png", i, BlobState.GOOD_BLOB);
+            JBlob jBlob = new JStandardBlob("img/monster1.png", i);
             jblobGridPanel.add(jBlob, BorderLayout.CENTER);
             jBlobList.add(jBlob);
         }

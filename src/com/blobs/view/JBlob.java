@@ -8,11 +8,9 @@ import java.io.File;
 
 public abstract class JBlob extends JLabel {
     private static final String IMG_PATH = "img" + File.separator;
-
     private int locationID;
-    private BlobState blobState;
 
-    public JBlob(String imagePath, int locationID, BlobState blobState) {
+    public JBlob(String imagePath, int locationID) {
         super("", new ImageIcon(imagePath), JLabel.CENTER);
         this.locationID = locationID;
 
@@ -23,21 +21,11 @@ public abstract class JBlob extends JLabel {
         return locationID;
     }
 
-    public BlobState getBlobState() {
-        return blobState;
-    }
-
     public void showBlob() {
         setVisible(true);
         int random = (int) (Math.random() * 8.0) + 1;
 
         setIcon(new ImageIcon(IMG_PATH + "monster" + random + ".png"));
-
-        if (random % 2 == 0) {
-            blobState = BlobState.GOOD_BLOB;
-        } else {
-            blobState = BlobState.BAD_BLOB;
-        }
     }
 
     public void hideBlob() {
