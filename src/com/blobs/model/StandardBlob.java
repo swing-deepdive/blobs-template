@@ -13,7 +13,7 @@ public class StandardBlob extends Blob {
 	@Override
 	JBlob getJBlob() {
 		// TODO Auto-generated method stub
-		return new JStandardBlob(40, 40, 60, 60);
+		return new JStandardBlob("sdf", 3);
 	}
 
 }

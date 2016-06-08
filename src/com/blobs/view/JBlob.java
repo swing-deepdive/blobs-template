@@ -1,37 +1,27 @@
 package com.blobs.view;
 
-import com.blobs.view.animation.Animation;
-
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public abstract class JBlob extends JPanel {
-    private int xLocation;
-    private int yLocation;
-    private int shapeHeight;
-    private int shapeWidth;
+public abstract class JBlob extends JLabel {
+    private int locationID;
+    private ImageIcon image;
+    private BlobState blobState;
 
-    public JBlob(int xLocation, int yLocation, int shapeWidth, int shapeHeight) {
-        super();
+    public JBlob(String imagePath, int locationID, BlobState blobState) {
+        super("", new ImageIcon(imagePath), JLabel.CENTER);
+        this.locationID = locationID;
 
-        setSize(shapeWidth * 2, shapeHeight * 2);
-        setVisible(true);
+        this.addMouseListener(new JBlobMouseListener(this));
     }
 
-    public int getXLocation() {
-        return xLocation;
+    public int getLocationID() {
+        return locationID;
     }
 
-    public int getYLocation() {
-        return yLocation;
+    public BlobState getBlobState() {
+        return blobState;
     }
-
-    public int getShapeHeight() {
-        return shapeHeight;
-    }
-
-    public int getShapeWidth() {
-        return shapeWidth;
-    }
-
 }
