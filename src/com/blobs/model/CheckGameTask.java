@@ -16,7 +16,7 @@ public class CheckGameTask extends TimerTask {
 	public void run() {
 		// TODO Auto-generated method stub
 		if (!this.field.checkBlobsAlive()) {
-			this.game.
+			this.game.gameOver();
 		}
 	}
 
