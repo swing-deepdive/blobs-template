@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="SoundFlush" />
+	<meta name="description" content="SoundFlush enables you to download most of the tracks from SoundCloud! Saving your favorite music has never been easier!" />
+	<meta name="keywords" content="soundflush, soundcloud mp3, download from soundcloud, soundcloud download, soundcloud downloader" />
+
+	<title>SoundFlush - Download tracks from SoundCloud!</title>
+
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+
+</head>
+
+<body>
+
+	<div class="nav">
+		<div class="nav__left">
+			<a href="http://www.facebook.com/sharer/sharer.php?u=http://soundflush.com/" target="_blank">Facebook</a>
+			<a href="http://twitter.com/home?status=http://soundflush.com/" target="_blank">Twitter</a>
+			<a href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://soundflush.com/" target="_blank">Google+</a>
+		</div>
+
+		<div class="nav__right">
+			<a href="/">Home</a>
+			<a href="mailto:mail@soundflush.com">Contact</a>
+		</div>
+	</div>
+
+	<div class="container">
+		<h1><a href="/">SoundFlush<span>.com</span></a></h1>
+		<div class="intro">
+			<p>SoundFlush enables you to download <span class="prominent">most of the tracks</span> from SoundCloud! Saving your <span class="prominent">favorite music </span><span class="count" data-count="10063069"> (10,063,069) </span>has never been easier! Enjoy your favorite music wherever you are.</p>
+		</div>
+		<div class="ad ad--top">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle"
+				style="display:block"
+				data-ad-client="ca-pub-5266014696972999"
+				data-ad-slot="3789563997"
+				data-ad-format="horizontal"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+		<form name="form_download" class="form" method="POST">
+		<input type="text" name="track_url" class="form__track-url" placeholder="Paste a link to the track page..." />
+		<input type="submit" name="btn_download" class="button button--download" value="Download"/>
+</form>
+		<div class="ad ad--bottom">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle"
+				style="display:block"
+				data-ad-client="ca-pub-5266014696972999"
+				data-ad-slot="1789733991"
+				data-ad-format="horizontal"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/script-min.js"></script>
+	<script>
+		
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-2217380-32', 'auto');
+		ga('send', 'pageview');
+		
+	</script>
+
+</body>
+</html>
