@@ -1,7 +1,5 @@
 package com.blobs.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Gamefield {
@@ -31,6 +29,11 @@ public class Gamefield {
 	}
 	
 	public boolean checkBlobsAlive() {
+		for (Blob blob : blobs) {
+			if (blob != null && !blob.isAlive()) {
+				return false;
+			}
+		}
 		return true;
 	}
 
