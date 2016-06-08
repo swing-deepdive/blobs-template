@@ -10,10 +10,4 @@ public class StandardBlob extends Blob {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	JBlob getJBlob() {
-		// TODO Auto-generated method stub
-		return new JStandardBlob("sdf", 3);
-	}
-
 }

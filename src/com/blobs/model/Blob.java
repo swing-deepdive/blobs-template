@@ -6,8 +6,6 @@ import com.blobs.view.JBlob;
 
 public abstract class Blob {
 	
-	abstract JBlob getJBlob();
-	
 	private int id;
 	private int score;
 	private Date creation;
