@@ -1,17 +1,10 @@
 package com.blobs.view;
 
-import com.blobs.Constants;
 import com.blobs.controller.IController;
 import com.blobs.model.Blob;
 import com.blobs.model.Ranking;
-import com.blobs.util.AudioPlayer;
-import com.sun.java.swing.plaf.gtk.GTKConstants;
-import javafx.scene.media.MediaPlayer;
-
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.util.*;
 import java.util.List;
 
 public class View extends JFrame implements IView {

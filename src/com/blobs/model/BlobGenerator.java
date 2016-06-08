@@ -1,15 +1,12 @@
 package com.blobs.model;
 
-import java.util.Random;
-import java.util.regex.Matcher;
+import com.blobs.Constants;
 
 public class BlobGenerator {
 	
 	private static BlobGenerator instance;
-	private static Random random;
 	
 	private BlobGenerator() {
-		random = new Random();
 	}
 	
 	public static BlobGenerator getInstance() {
@@ -20,7 +17,6 @@ public class BlobGenerator {
 	}
 	
 	public Blob generateBlob(int location) {
-		int score = (int) (Math.random() * 5.0) + 1;
-		return new StandardBlob(location, score, 3000);
+		return new StandardBlob(location, Constants.BLOB_SCORE, Constants.LIFETIME);
     }
 }
