@@ -3,7 +3,7 @@ package com.blobs.view;
 import javax.swing.*;
 
 /**
- * Created by root on 08.06.16.
+ * This is where the main game UI should be.
  */
 public class JGamePanel extends JComponent {
 }

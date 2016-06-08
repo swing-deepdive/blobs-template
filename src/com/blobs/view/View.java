@@ -7,11 +7,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
+/**
+ * The view implements {@link IView} and houses the implementation found there. It extends JFrame
+ * because it is the "window" of the application. From here all states of the view should be managed.
+ */
 public class View extends JFrame implements IView {
 	private JStartPanel startPanel;
-	private IController controller;
     private JHighScorePanel highScorePanel;
 
+    /**
+     * Creates a new instance of the View.
+     */
 	public View() {
 		this.setSize(900, 700);
 		this.setResizable(false);
@@ -29,16 +35,11 @@ public class View extends JFrame implements IView {
 	}
 
 	@Override
-	public void setController(IController controller) {
-		this.controller = controller;
+	public void addBlob(Blob blob) {
 	}
 
 	@Override
-	public void showBlob(Blob blob) {
-	}
-
-	@Override
-	public void hideBlob(Blob blob) {
+	public void removeBlob(Blob blob) {
     }
 
 	@Override

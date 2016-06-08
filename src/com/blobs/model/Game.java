@@ -30,7 +30,7 @@ public class Game implements IModel {
 	public void killBlob(Blob blob) {
 		this.score += blob.getScore();
 		this.field.removeBlob(blob.getId());
-		this.view.hideBlob(blob);
+		this.view.removeBlob(blob);
 		this.view.updateScore(this.score);
 	}
 
@@ -42,7 +42,7 @@ public class Game implements IModel {
 
 	public void addBlob() {
 		Blob blob = this.field.addBlob();
-		this.view.showBlob(blob);
+		this.view.addBlob(blob);
 	}
 
 	@Override

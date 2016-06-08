@@ -19,9 +19,14 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.net.MalformedURLException;
 
+/**
+ * This is where the start screen of the UI should be.
+ */
 public class JStartPanel extends JComponent{
 
+    /**
+     * The default constructor of the class, yay!
+     */
 	public JStartPanel() {
-
 	}
 }
