@@ -12,12 +12,13 @@ public class Controller implements IController {
 	
 	@Override
 	public void killBlob(int location) {
-		model.killBlob(location);
+		
+		this.model.killBlob(location);
 	}
 
 	@Override
 	public void submitHighscore(String name, int score) {
-		// TODO Auto-generated method stub
+		this.model.submitHighscore(name, score);
 		
 	}
 

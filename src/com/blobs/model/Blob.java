@@ -25,8 +25,9 @@ public abstract class Blob {
 		return this.id;
 	}
 	
-	public boolean isAlive() {
-		return this.creation.getTime() - new Date().getTime() < this.lifetime;
+	public boolean isAlive() 
+	{	
+		return new Date().getTime() - this.creation.getTime() < this.lifetime;
 	}
 	
 	public int getScore() {

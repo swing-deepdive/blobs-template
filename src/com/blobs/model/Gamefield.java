@@ -22,13 +22,14 @@ public class Gamefield {
 		return 0;
 	}
 
-	public Blob addBlob() {
+	public int addBlob() {
 		int location;
 		do {
 			location = random.nextInt(9);
 		} while (blobs[location] != null);
-		blobs[location] = BlobGenerator.getInstance().generateBlob();
-		return blobs[location];
+		blobs[location] = BlobGenerator.getInstance().generateBlob(location);
+		System.out.println("added new blob at " + Integer.toString(location));
+		return location;
 	}
 
 	public void removeBlob(int location) {
@@ -37,7 +38,10 @@ public class Gamefield {
 	
 	public boolean checkBlobsAlive() {
 		for (Blob blob : blobs) {
-			if (blob != null && !blob.isAlive()) {
+			if (blob == null) {
+				continue;
+			}
+			if (!blob.isAlive()) {
 				return false;
 			}
 		}
