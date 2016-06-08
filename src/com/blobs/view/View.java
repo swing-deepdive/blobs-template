@@ -4,13 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class View extends JFrame implements IView {
+    private JBlobGrid jBlobGrid;
 
 	public View() {
 		this.setSize(900, 700);
 		this.setResizable(false);
 
         // Create and set up grid
-        JBlobGrid jBlobGrid = new JBlobGrid(3, 3);
+        jBlobGrid = new JBlobGrid(3, 3);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         // Initialize the grid with images etc.
@@ -25,12 +26,12 @@ public class View extends JFrame implements IView {
 
     @Override
     public void showBlob(int index) {
-
+        jBlobGrid.showSlot(index);
     }
 
     @Override
     public void hideBlob(int index) {
-
+        jBlobGrid.hideSlot(index);
     }
 
     @Override

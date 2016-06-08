@@ -27,7 +27,8 @@ public abstract class JBlob extends JLabel {
         return blobState;
     }
 
-    public void update() {
+    public void showBlob() {
+        setVisible(true);
         int random = (int) (Math.random() * 8.0) + 1;
 
         setIcon(new ImageIcon(IMG_PATH + "monster" + random + ".png"));
@@ -37,5 +38,9 @@ public abstract class JBlob extends JLabel {
         } else {
             blobState = BlobState.BAD_BLOB;
         }
+    }
+
+    public void hideBlob() {
+        setVisible(false);
     }
 }

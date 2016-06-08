@@ -2,7 +2,6 @@ package com.blobs.view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +32,13 @@ public class JBlobGrid extends GridLayout {
         pane.add(jblobGridPanel, BorderLayout.NORTH);
     }
 
-    public void updateSlot(int index) {
+    public void showSlot(int index) {
         JBlob blob = jBlobList.get(index);
-        blob.update();
+        blob.hideBlob();
+    }
+
+    public void hideSlot(int index) {
+        JBlob blob = jBlobList.get(index);
+        blob.hideBlob();
     }
 }
