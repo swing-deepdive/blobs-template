@@ -13,7 +13,9 @@ public class JGameOverPanel extends JComponent {
 
     public JGameOverPanel() {
         this.setBackground(new Color(255, 255, 255));
+        setupNameField();
         setupGameOverField();
+        this.repaint();
     }
 
     private void setupNameField() {
@@ -28,11 +30,12 @@ public class JGameOverPanel extends JComponent {
 
     private void setupGameOverField() {
         gameOver = new JLabel("Game Over");
-        gameOver.setVisible(false);
+        gameOver.setVisible(true);
         gameOver.setHorizontalAlignment(SwingConstants.CENTER);
         gameOver.setVerticalAlignment(SwingConstants.CENTER);
         gameOver.setFont(new Font("PixelSplitter-Bold", Font.BOLD, 80));
         gameOver.setForeground(new Color(44, 165, 124));
+        gameOver.setBackground(new Color(255, 255, 255));
         gameOver.setBorder(BorderFactory.createEmptyBorder( 0, 0, 0, 0 ));
         add(gameOver);
     }
