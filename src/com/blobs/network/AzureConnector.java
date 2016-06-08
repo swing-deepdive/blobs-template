@@ -10,21 +10,19 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+import com.blobs.Constants;
+
 public class AzureConnector {
 
-	private String url;
 	private String gameId;
 
 	public AzureConnector(String gameId) {
-		this.url = API_URL + "&id=" + gameId;
 		this.gameId = gameId;
 	}
 
-	static final String API_URL = "http://blobs-swing.azurewebsites.net/api/highscore?zumo-api-version=2.0.0";
-	static final String TABLE_URL = "http://blobs-swing.azurewebsites.net/tables/highscore?zumo-api-version=2.0.0";
 	public void getScores() {
 		try {
-			URL obj = new URL(url);
+			URL obj = new URL(Constants.API_URL + "&id=" + gameId);
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 			String inputLine;
@@ -48,7 +46,7 @@ public class AzureConnector {
 		int    postDataLength = postData.length;
 		URL url;
 		try {
-			url = new URL( TABLE_URL );
+			url = new URL(Constants.TABLE_URL);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();           
 			conn.setDoOutput( true );
 			conn.setInstanceFollowRedirects( false );
