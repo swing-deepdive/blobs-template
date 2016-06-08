@@ -63,8 +63,8 @@ public class Game implements IModel{
 	}
 
 	@Override
-	public void submitHighscore(String name, int score) {
-		this.manager.addRanking(new Ranking(name, score));
+	public void submitHighscore(String name) {
+		this.manager.addRanking(new Ranking(name, this.score));
 		this.view.showLeaderboards(this.manager.getRankings());
 	}
 }
