@@ -34,5 +34,6 @@ public class JGameOverPanel extends JComponent {
         gameOver.setFont(new Font("PixelSplitter-Bold", Font.BOLD, 80));
         gameOver.setForeground(new Color(44, 165, 124));
         gameOver.setBorder(BorderFactory.createEmptyBorder( 0, 0, 0, 0 ));
+        add(gameOver);
     }
 }

@@ -57,7 +57,7 @@ public class View extends JFrame implements IView {
         JGameOverPanel gameOverPanel = new JGameOverPanel();
         this.remove(gamePanel);
         gameOverPanel.setBounds(0, 0, 900, 700);
-        gamePanel.setVisible(false);
+        this.gamePanel.setVisible(false);
         this.add(gameOverPanel);
     }
 
