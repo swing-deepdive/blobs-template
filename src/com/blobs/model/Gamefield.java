@@ -22,14 +22,13 @@ public class Gamefield {
 		return 0;
 	}
 
-	public int addBlob() {
+	public Blob addBlob() {
 		int location;
 		do {
 			location = random.nextInt(9);
 		} while (blobs[location] != null);
 		blobs[location] = BlobGenerator.getInstance().generateBlob(location);
-		System.out.println("added new blob at " + Integer.toString(location));
-		return location;
+		return blobs[location];
 	}
 
 	public void removeBlob(int location) {

@@ -45,8 +45,8 @@ public class Game implements IModel{
 	}
 	
 	public void addBlob() {
-		int location = this.field.addBlob();
-		this.view.showSlot(location);
+		Blob blob = this.field.addBlob();
+		this.view.showSlot(blob);
 	}
 
 	@Override
