@@ -30,7 +30,7 @@ public class JGamePanel extends JPanel {
         score.setVerticalAlignment(SwingConstants.BOTTOM);
         score.setFont(new Font("PixelSplitter-Bold", Font.BOLD, 50));
         score.setForeground(Color.WHITE);
-        score.setBorder(BorderFactory.createEmptyBorder( 0, 0, 25, 0 ));
+        score.setBorder(BorderFactory.createEmptyBorder(0, 0, 25, 0));
         this.add(score);
     }
 

@@ -16,6 +16,7 @@ public class View extends JFrame implements IView {
 	private JGamePanel gamePanel;
 	private JStartPanel startPanel;
 	private IController controller;
+    private JHighScorePanel highScorePanel;
 
 	public View() {
 		this.setSize(900, 700);
@@ -23,12 +24,13 @@ public class View extends JFrame implements IView {
 
 		// Create and set up grid
 		startPanel = new JStartPanel();
+        highScorePanel = new JHighScorePanel();
 
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 		getContentPane().setBackground(new Color(44, 165, 124));
 		setBackground(new Color(44, 165, 124));
-		add(startPanel);
+		add(highScorePanel);
 
 		this.setVisible(true);
 	}
@@ -57,11 +59,16 @@ public class View extends JFrame implements IView {
 	public void gameOver() {
 		JGameOverPanel gameOverPanel = new JGameOverPanel();
 		this.remove(this.gamePanel);
+        this.gamePanel = null;
 		this.revalidate();
 		this.repaint();
 		gameOverPanel.setBounds(0, 0, 900, 700);
 		this.gamePanel = null;
 		this.add(gameOverPanel);
+        this.revalidate();
+        this.repaint();
+
+        // 200 l - 190 t - 235 w - 30 h
 	}
 
 	@Override
