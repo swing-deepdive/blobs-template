@@ -5,8 +5,6 @@ import com.blobs.model.Blob;
 import com.blobs.model.Ranking;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public interface IView {
 
@@ -24,5 +22,5 @@ public interface IView {
 
     void run();
 
-    void showLeaderboards(Set<Ranking> leaderboard);
+    void showLeaderboards(List<Ranking> leaderboard);
 }

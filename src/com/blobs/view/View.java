@@ -12,6 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.util.*;
+import java.util.List;
 
 public class View extends JFrame implements IView {
 	private JGamePanel gamePanel;
@@ -85,7 +86,7 @@ public class View extends JFrame implements IView {
 	}
 
 	@Override
-	public void showLeaderboards(Set<Ranking> leaderboard) {
+	public void showLeaderboards(List<Ranking> leaderboard) {
         highScorePanel = new JHighScorePanel();
         highScorePanel.initTable(leaderboard);
         this.remove(this.gameOverPanel);
@@ -94,5 +95,6 @@ public class View extends JFrame implements IView {
         this.add(highScorePanel);
         this.revalidate();
         this.repaint();
+		
 	}
 }
