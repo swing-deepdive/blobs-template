@@ -29,21 +29,16 @@ public interface IView {
      *     blobbery with a secret recipe perfected over 1 all-nighter.
      * </p>
      *
-     * @param blob The thingy-ma-jig of the program to add.
+     * @param blob The blob that can be anything.
      */
     void addBlob(Blob blob);
 
     /**
      * <p>
-     *     Don't be lazy, go read the docs on {@link #addBlob(Blob)} if you are
-     *     wondering what a blob is. Or just read the docs on a {@link Blob} right
-     *     away. Either way not gonna tell you :P .
-     * </p>
-     * <p>
-     *     This method should simply remove a blob.
+     *     This method should simply remove a {@link Blob}.
      * </p>
      *
-     * @param blob The thingy-ma-jig of the program to delete.
+     * @param blob The blob that can be anything.
      */
     void removeBlob(Blob blob);
 

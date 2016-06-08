@@ -17,10 +17,10 @@ public final class Constants {
     // Window height
 	public static final int WINDOW_HEIGHT = 700;
 
-    // Please don't change this
+    // Please don't change this https://youtu.be/otCpCn0l4Wo?t=17s
 	public static final String API_URL = "http://blobs-swing.azurewebsites.net/api/highscore?zumo-api-version=2.0.0";
 
-    // Please also don't change this
+    // Please also don't change this https://youtu.be/otCpCn0l4Wo?t=17s
     public static final String TABLE_URL = "http://blobs-swing.azurewebsites.net/tables/highscore?zumo-api-version=2.0.0";
 
     // The game ID used to identify yourself with a specific leaderboard on the server
