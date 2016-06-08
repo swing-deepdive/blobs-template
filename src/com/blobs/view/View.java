@@ -3,6 +3,7 @@ package com.blobs.view;
 import com.blobs.Constants;
 import com.blobs.controller.IController;
 import com.blobs.model.Blob;
+import com.blobs.model.Ranking;
 import com.blobs.util.AudioPlayer;
 import com.sun.java.swing.plaf.gtk.GTKConstants;
 import javafx.scene.media.MediaPlayer;
@@ -88,7 +89,14 @@ public class View extends JFrame implements IView {
 	}
 
 	@Override
-	public void showLeaderboards(Map<String, Integer> leaderboardMap) {
-
+	public void showLeaderboards(Set<Ranking> leaderboard) {
+        highScorePanel = new JHighScorePanel();
+        highScorePanel.initTable(leaderboard);
+        this.remove(this.gameOverPanel);
+        this.revalidate();
+        this.repaint();
+        highScorePanel.setBounds(0, 0, 900, 700);
+        this.gameOverPanel = null;
+        this.add(highScorePanel);
 	}
 }

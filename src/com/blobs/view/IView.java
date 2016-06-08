@@ -2,9 +2,11 @@ package com.blobs.view;
 
 import com.blobs.controller.IController;
 import com.blobs.model.Blob;
+import com.blobs.model.Ranking;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public interface IView {
 
@@ -24,5 +26,5 @@ public interface IView {
 
     void run();
 
-    void showLeaderboards(Map<String, Integer> leaderboardMap);
+    void showLeaderboards(Set<Ranking> leaderboard);
 }
