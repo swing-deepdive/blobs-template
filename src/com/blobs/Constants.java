@@ -8,5 +8,5 @@ public final class Constants {
 	public static final int WINDOW_HEIGHT = 700;
 	public static final String API_URL = "http://blobs-swing.azurewebsites.net/api/highscore?zumo-api-version=2.0.0";
 	public static final String TABLE_URL = "http://blobs-swing.azurewebsites.net/tables/highscore?zumo-api-version=2.0.0";
-
+	public static final String GAME_ID = "23";
 }

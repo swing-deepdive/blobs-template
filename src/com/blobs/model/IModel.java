@@ -8,6 +8,6 @@ public interface IModel {
 	
 	void killBlob(Blob blob);
 	
-	void submitHighscore(String name, int score);
+	void submitHighscore(String name);
 	
 }
