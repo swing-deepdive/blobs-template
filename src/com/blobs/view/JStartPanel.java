@@ -15,10 +15,6 @@ import java.net.MalformedURLException;
 public class JStartPanel extends JComponent {
     private static final String MEDIA_URL = "vid" + File.separator + "prequel.mp4";
 
-	public JStartPanel() {
-
-	}
-
     public void startAnimation() {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
