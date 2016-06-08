@@ -11,20 +11,22 @@ import java.io.File;
  * Created by root on 08.06.16.
  */
 public class JBlobMouseListener implements MouseListener {
-    private JBlob jBlob;
+    private JBlobContainer jBlobContainer;
     private IController controller;
     private AudioPlayer audioPlayer;
 
-    public JBlobMouseListener(JBlob jBlob, IController controller) {
-        this.jBlob = jBlob;
+    public JBlobMouseListener(JBlobContainer jBlobContainer, IController controller) {
+        this.jBlobContainer = jBlobContainer;
         this.controller = controller;
         this.audioPlayer = new AudioPlayer();
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        audioPlayer.playSound("audio" + File.separator + "kill.wav", 1);
-        controller.killBlob(jBlob.getBlob());
+        if (!jBlobContainer.isEmpty()) {
+            audioPlayer.playSound("audio" + File.separator + "kill.wav", 1);
+            controller.killBlob(jBlobContainer.getBlob());
+        }
     }
 
     @Override

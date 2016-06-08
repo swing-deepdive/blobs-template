@@ -61,7 +61,6 @@ public class JHighScorePanel extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-
         super.paintComponent(g);
         try {
             g.drawImage(ImageIO.read(new File("img" + File.separator + "highscore.png")), 0, 0, null);

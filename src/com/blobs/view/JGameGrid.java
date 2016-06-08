@@ -11,11 +11,11 @@ import java.util.List;
  * Created by root on 08.06.16.
  */
 public class JGameGrid extends GridLayout {
-    private List<JBlob> jBlobList;
+    private List<JBlobContainer> jBlobContainerList;
 
     public JGameGrid(int rows, int cols) {
         super(rows, cols);
-        this.jBlobList = new ArrayList<>();
+        this.jBlobContainerList = new ArrayList<>();
     }
 
     public JPanel init(Blob[] blob) {
@@ -27,22 +27,22 @@ public class JGameGrid extends GridLayout {
         panel.setLayout(this);
 
         for (int i = 0; i < 9; i++) {
-            JBlob jBlob = new JStandardBlob(blob[i]);
-            jBlob.hideBlob();
-            panel.add(jBlob, BorderLayout.CENTER);
-            jBlobList.add(jBlob);
+            JBlobContainer jBlobContainer = new JStandardBlobContainer(blob[i]);
+            jBlobContainer.hideBlob();
+            panel.add(jBlobContainer, BorderLayout.CENTER);
+            jBlobContainerList.add(jBlobContainer);
         }
 
         return panel;
     }
 
     public void showSlot(Blob blob) {
-        JBlob jblob = jBlobList.get(blob.getId());
+        JBlobContainer jblob = jBlobContainerList.get(blob.getId());
         jblob.showBlob(blob);
     }
 
     public void hideSlot(Blob blob) {
-        JBlob jblob = jBlobList.get(blob.getId());
+        JBlobContainer jblob = jBlobContainerList.get(blob.getId());
         jblob.hideBlob();
     }
 }

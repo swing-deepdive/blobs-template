@@ -2,8 +2,6 @@ package com.blobs.model;
 
 import java.util.Date;
 
-import com.blobs.view.JBlob;
-
 public abstract class Blob {
 	
 	private int id;

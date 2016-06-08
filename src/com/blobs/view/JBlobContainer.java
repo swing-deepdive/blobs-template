@@ -7,11 +7,11 @@ import com.blobs.model.Blob;
 import javax.swing.*;
 import java.io.File;
 
-public abstract class JBlob extends JLabel {
+public abstract class JBlobContainer extends JLabel {
     private static final String IMG_PATH = "img" + File.separator;
     private Blob blob;
 
-    public JBlob(Blob blob) {
+    public JBlobContainer(Blob blob) {
         super("", new ImageIcon(IMG_PATH + "background.png"), JLabel.CENTER);
         showBlob(blob);
 
@@ -22,6 +22,10 @@ public abstract class JBlob extends JLabel {
         return blob;
     }
 
+    public boolean isEmpty() {
+        return blob == null;
+    }
+
     public void showBlob(Blob blob) {
         this.blob = blob;
         setVisible(true);
@@ -30,6 +34,7 @@ public abstract class JBlob extends JLabel {
     }
 
     public void hideBlob() {
+        blob = null;
         setVisible(false);
     }
 }
