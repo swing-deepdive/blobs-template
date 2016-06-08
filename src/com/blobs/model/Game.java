@@ -11,9 +11,11 @@ public class Game implements IModel{
 	private Gamefield field;
 	private int score;
 	private IView view;
+	private RankingManager manager;
 	
 	public Game(IView view) {
 		this.view = view;
+		this.manager = new RankingManager();
 		reset();
 	}
 	
@@ -62,7 +64,7 @@ public class Game implements IModel{
 
 	@Override
 	public void submitHighscore(String name, int score) {
-		// Network
-		this.view.highscoreSubmitted(score, name);
+		this.manager.addRanking(new Ranking(name, score));
+		this.view.showLeaderboards(this.manager.getRankings());
 	}
 }

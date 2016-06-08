@@ -1,7 +1,7 @@
 package com.blobs.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.blobs.Constants;
 import com.blobs.network.AzureConnector;
@@ -17,8 +17,8 @@ public class RankingManager {
 		this.connector.putScore(ranking.getName(), ranking.getHighscore());
 	}
 	
-	public List<Ranking> getRankings() {
-		List<Ranking> rankings = new ArrayList<Ranking>();
+	public Set<Ranking> getRankings() {
+		Set<Ranking> rankings = new HashSet<Ranking>();
 		String json = this.connector.getScores();
 		while(json.contains("\"Name\":")) {
 			
